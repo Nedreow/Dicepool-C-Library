@@ -7,8 +7,13 @@ namespace DicePool
     {
         public string Name { get; }
 
-        public List<string> facets { get; }
+        public List<string> Facets { get; }
 
+        public string Roll()
+        {
+            return Facets[0];
+        }
+        
         public Die(int sides, string name = "")
         {
             if (name == "")
@@ -20,7 +25,7 @@ namespace DicePool
                 Name = name;
             }
             
-            facets = Enumerable.Range(1, sides).Select(x => x.ToString()).ToList();
+            Facets = Enumerable.Range(1, sides).Select(x => x.ToString()).ToList();
         }
     }
 }

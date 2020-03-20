@@ -13,7 +13,7 @@ namespace DicePoolTest
             
             Assert.AreEqual("6sided", testDie.Name);
             var expectedFacets = new List<string>{"1", "2", "3", "4", "5", "6"};
-            Assert.AreEqual(expectedFacets, testDie.facets);
+            Assert.AreEqual(expectedFacets, testDie.Facets);
         }
     }
 }

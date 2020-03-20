@@ -8,7 +8,7 @@ namespace DicePool
 
         public List<Die> Dice { get; }
         
-        public List<Dictionary<string, string>> Results { get; }
+        public List<RollResult> Results { get; }
 
         public DicePool(string name)
         {
@@ -25,7 +25,18 @@ namespace DicePool
             return Dice;
         }
 
-        public Dictionary<string, string> GetLatestResult()
+        public RollResult RollPool()
+        {
+            var results = new RollResult();
+            foreach (var die in Dice)
+            {
+                results.AddResult(die.Name, die.Roll());
+            }
+            Results.Add(results);
+            return results;
+        }
+
+        public RollResult GetLatestResult()
         {
             return Results[-1];
         }
