@@ -20,7 +20,16 @@ namespace DicePool
         {
             for (int i = 0; i < amount; i++)
             {
-                Dice.Add(new Die(sides));
+                Dice.Add(new Die(sides, name));
+            }
+            return Dice;
+        }
+
+        public List<Die> AddDie(List<string> facets, string name = "", int amount = 1)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                Dice.Add(new Die(facets, name));
             }
             return Dice;
         }

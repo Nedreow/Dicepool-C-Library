@@ -8,11 +8,6 @@ namespace DicePool
         public string Name { get; }
 
         public List<string> Facets { get; }
-
-        public string Roll()
-        {
-            return Facets[0];
-        }
         
         public Die(int sides, string name = "")
         {
@@ -26,6 +21,17 @@ namespace DicePool
             }
             
             Facets = Enumerable.Range(1, sides).Select(x => x.ToString()).ToList();
+        }
+
+        public Die(List<string> facets, string name = "")
+        {
+            Name = name;
+            Facets = facets;
+        }
+
+        public string Roll()
+        {
+            return Facets[0];
         }
     }
 }
