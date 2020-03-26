@@ -36,7 +36,7 @@ namespace DicePool
 
         public string Roll()
         {
-            return Facets[random.Next(1, Facets.Count + 1)];
+            return Facets[random.Next(Facets.Count)];
         }
     }
 }

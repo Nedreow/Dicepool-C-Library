@@ -14,6 +14,7 @@ namespace DicePool
         {
             Name = name;
             Dice = new List<Die>();
+            Results = new List<RollResult>();
         }
 
         public List<Die> AddDie(int sides, string name = "", int amount = 1)
